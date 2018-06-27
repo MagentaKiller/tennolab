@@ -23,14 +23,14 @@ async def on_member_join(member):
     fmt = 'Bine ai venit {0.mention} pe {1.name}!'
     await client.send_message(server, fmt.format(member, server))
 
-    @client.event
+    @client.command
 async def on_message(message):
     # we do not want the bot to reply to itself
     if message.author == client.user:
         return
 
     if message.content.startswith('-invite'):
-        msg = 'https://discord.gg/sa54e2W '.format(message)
+        msg = 'https://discord.gg/sa54e2W'.format(message)
         await client.send_message(message.channel, msg)
     
 
